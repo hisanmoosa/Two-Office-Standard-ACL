@@ -1,0 +1,5 @@
+Repository: Two-Office-Standard-ACL
+Description: Cisco Packet Tracer lab using a standard IPv4 ACL to filter traffic between Dublin and Cork while keeping OSPF active. Includes router configurations and ping tests.
+Topics: cisco-packet-tracer, access-control-list, ospf, ccna, networking
+First commit: Add two-office ACL lab and verification results
+Extract the ZIP and upload the contents of the project folder so README.md is at the repository root.

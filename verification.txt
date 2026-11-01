@@ -1,0 +1,19 @@
+Results from supplied Packet Tracer output; excerpts summarised.
+
+1. Applied | Cork-PC -> 192.168.10.11
+   4 sent, 0 received. R1 (10.0.0.1): Destination host unreachable.
+2. Applied | Dublin-PC -> 192.168.20.11
+   4 sent, 0 received. Request timed out. Cork replies hit the deny rule.
+3. Detached | Cork-PC -> 192.168.10.11
+   4 sent, 4 received, 0% loss. TTL 126; min/max/avg 0/16/10 ms.
+4. Reapplied | Cork-PC -> 192.168.10.11
+   4 sent, 0 received. R1 (10.0.0.1): Destination host unreachable.
+
+ACL counter immediately after test 1:
+Standard IP access list 10
+    10 deny 192.168.20.0 0.0.0.255 (4 match(es))
+    20 permit any
+
+R1 OSPF neighbour while ACL was active (selected columns):
+Neighbor ID    State    Address     Interface
+192.168.20.1   FULL/DR  10.0.0.2    GigabitEthernet0/1

@@ -1,0 +1,24 @@
+Apply on R1-dublin at the # prompt:
+configure terminal
+access-list 10 deny 192.168.20.0 0.0.0.255
+access-list 10 permit any
+interface g0/0
+ip access-group 10 out
+end
+
+Verify: show access-lists
+Check OSPF: show ip ospf neighbor
+
+Detach temporarily:
+configure terminal
+interface g0/0
+no ip access-group 10 out
+end
+
+Reapply:
+configure terminal
+interface g0/0
+ip access-group 10 out
+end
+
+Save: copy running-config startup-config
